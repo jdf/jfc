@@ -1,6 +1,7 @@
 #include "vector.h"
 
 #include <assert.h>
+#include <stdlib.h>
 #include <string.h>
 
 #define T Vector_T
@@ -15,12 +16,12 @@ struct T {
   char *data;
 };
 
-void Vector_noop(void *el) {}
+size_t Vector_len(T t) { return t->len; }
+size_t Vector_el_size(T t) { return t->el_size; }
+void *Vector_data(T t) { return t->data; }
 
-struct Vector_config {
-  size_t element_size;
-  Vector_destructor element_destructor;
-};
+void _noop(void *el) {}
+Vector_destructor Vector_noop = _noop;
 
 T Vector_new(struct Vector_config config) {
   T t = (T)calloc(1, sizeof(struct T));

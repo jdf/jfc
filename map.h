@@ -1,5 +1,5 @@
-#ifndef JDF_MAP_H
-#define JDF_MAP_H
+#ifndef JFC_MAP_H
+#define JFC_MAP_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -30,4 +30,4 @@ void Map_set(T t, void *key, void *value);
 
 #undef T
 
-#endif // JDF_MAP_H
+#endif // JFC_MAP_H

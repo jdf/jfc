@@ -22,6 +22,10 @@ struct Vector_config {
 extern T Vector_new(struct Vector_config config);
 extern void Vector_free(T *t);
 
+extern size_t Vector_len(T t);
+extern size_t Vector_el_size(T t);
+extern void *Vector_data(T t);
+
 // Sets the length of this Vector to 0, calling the destructor
 // for each object currently in the Vector.
 extern void Vector_clear(T t);
